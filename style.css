@@ -1,0 +1,74 @@
+body {
+    min-height: 100vh;
+    background: #130a1d;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.bubbles {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.bubble {
+    position: absolute;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: floatAndScale var(--duration, 4s) ease-in-out infinite;
+    left: var(--left, 5%);
+}
+
+.bubble:nth-child(3n) {
+    background: #4fc3dc;
+    box-shadow: 0 0 0 10px #4fc3dc44,
+                0 0 50px #4fc3dc,
+                0 0 100px #4fc3dc;
+}
+
+.bubble:nth-child(3n+1) {
+    background: #ff2d75;
+    box-shadow: 0 0 0 10px #ff2d7544,
+                0 0 50px #ff2d75,
+                0 0 100px #ff2d75;
+}
+
+.bubble:nth-child(3n+2) {
+    background: white;
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.3),
+                0 0 50px white,
+                0 0 100px white;
+}
+
+@keyframes floatAndScale {
+    0% {
+        transform: translateY(100vh) scale(0);
+        opacity: 0;
+    }
+    20% {
+        transform: translateY(80vh) scale(0.2);
+        opacity: 0.4;
+    }
+    50% {
+        transform: translateY(40vh) scale(0.6);
+        opacity: 1;
+    }
+    80% {
+        transform: translateY(-20vh) scale(0.8);
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(-100vh) scale(1);
+        opacity: 0;
+    }
+}
