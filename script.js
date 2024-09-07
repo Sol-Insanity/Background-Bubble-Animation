@@ -14,7 +14,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const bubblesContainer = document.getElementById('bubbles');
     const bubbleCount = 40; // Number of bubbles
-    const bubbleSize = 50; // Approximate size of bubbles in pixels
+    const bubbleSize = 50; //Bubble Size
   
     for (let i = 0; i < bubbleCount; i++) {
       const bubble = document.createElement('span');
